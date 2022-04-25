@@ -1,0 +1,14 @@
+doctype html
+
+include ../mixins/mixins-loader.pug
+
+include settings.pug
+block vars
+
+html(lang="ru" dir="ltr")
+  include head.pug
+  body(class=`${bodyClass}`)
+    +header
+    +b.MAIN.main-content
+      block content
+    +footer
