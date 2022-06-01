@@ -13,8 +13,8 @@ $breakpoints-values: (
 $breakpoints-ie8: false !default;
 
 @function _breakpoints-parse($string) {
-	$FROM: "from ";
-	$TO: "to ";
+	$FROM: 'from ';
+	$TO: 'to ';
 	$string: inspect($string);
 	$has-min: false;
 	$has-max: false;
@@ -46,30 +46,30 @@ $breakpoints-ie8: false !default;
 }
 
 @function _string-to-number($string) {
-	$digits: "0123456789";
+	$digits: '0123456789';
 	$number: 0;
 	$negative: false;
 	$units: (
-		"%": 1%,
-		"ch": 1ch,
-		"cm": 1cm,
-		"em": 1em,
-		"ex": 1ex,
-		"in": 1in,
-		"mm": 1mm,
-		"pc": 1pc,
-		"pica": 1pica,
-		"pt": 1pt,
-		"px": 1px,
-		"rem": 1rem,
-		"vmax": 1vmax,
-		"vmin": 1vmin,
-		"vh": 1vh,
-		"vw": 1vw,
+		'%': 1%,
+		'ch': 1ch,
+		'cm': 1cm,
+		'em': 1em,
+		'ex': 1ex,
+		'in': 1in,
+		'mm': 1mm,
+		'pc': 1pc,
+		'pica': 1pica,
+		'pt': 1pt,
+		'px': 1px,
+		'rem': 1rem,
+		'vmax': 1vmax,
+		'vmin': 1vmin,
+		'vh': 1vh,
+		'vw': 1vw,
 	);
 	$unit: null;
 
-	@if str-index($string, "-") == 1 {
+	@if str-index($string, '-') == 1 {
 		$negative: true;
 		$string: str-slice($string, 2);
 	}
@@ -81,7 +81,7 @@ $breakpoints-ie8: false !default;
 		@if type-of($index) == number {
 			$number: $number * 10 + ($index - 1);
 		} @else {
-			$unit: unquote("#{$unit}#{$digit}");
+			$unit: unquote('#{$unit}#{$digit}');
 		}
 	}
 

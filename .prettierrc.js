@@ -14,5 +14,4 @@ module.exports = {
 	pugAttributeSeparator: 'none',
 	pugWrapAttributesThreshold: 1,
 	pugSingleFileComponentIndentation: true,
-	pugSortAttributes: 'asc',
 };
