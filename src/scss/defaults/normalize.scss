@@ -188,19 +188,8 @@ template {
 	display: none;
 }
 
-input {
-	border-radius: unset;
-}
-
 button {
 	cursor: pointer;
 	border: none;
 	background: transparent;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-	select textarea,
-	input {
-		font-size: 16px;
-	}
 }

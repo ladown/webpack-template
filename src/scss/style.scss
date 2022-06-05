@@ -1,14 +1,6 @@
 @use 'sass:math';
 
-@import './library/breakpoints';
-@import './library/mixins';
-
-@import './defaults/functions.scss';
-@import './defaults/variables';
-@import './defaults/mixins';
-@import './defaults/normalize';
-@import './defaults/common';
-@import './defaults/fonts';
-@import './defaults/animation';
-@import './defaults/content';
-@import './defaults/data';
+@import './library/index';
+@import './defaults/index';
+@import './base/index';
+@import './layouts/index';

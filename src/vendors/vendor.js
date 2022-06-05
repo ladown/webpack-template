@@ -1,1 +1,1 @@
-import "./vendor.css";
+import './vendor.css';

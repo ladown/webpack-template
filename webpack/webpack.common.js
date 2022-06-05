@@ -54,7 +54,7 @@ module.exports = {
 			logo: `${paths.src.favicon}/favicon.svg`,
 			cache: true,
 			outputPath: paths.build.favicon,
-			prefix: './images/favicons/',
+			prefix: './img/favicons/',
 			inject: true,
 			favicons: {
 				lang: 'en-US',

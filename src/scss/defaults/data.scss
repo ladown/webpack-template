@@ -71,6 +71,12 @@
 	white-space: nowrap;
 }
 
+%flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 // максимум сторок текста
 @mixin max-rows($line-height, $rows, $only-height: false, $max-height: false) {
 	line-height: #{$line-height}rem;
