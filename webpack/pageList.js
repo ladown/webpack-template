@@ -3,24 +3,24 @@ const pugFiles = require('./pugPages')();
 
 const folderPath = __dirname.replace('webpack', '').trim().split('/');
 const projectName = folderPath[folderPath.length - 2]
-	.replace(/-|_/gm, '')
+	.replace(/-|_/gm, ' ')
 	.toLowerCase()
 	.trim()
 	.split(' ')
 	.map((el) => capitalizeFirstLetter(el))
-	.join('');
+	.join(' ');
 
 const generatingPageList = () => {
 	let list = '<ol>';
 	pugFiles.forEach((pageName) => {
 		if (!pageName.includes('index')) {
 			const name = pageName
-				.replace(/(-|_|.pug|page)/gm, '')
+				.replace(/(-|_|.pug|page)/gm, ' ')
 				.toLowerCase()
 				.trim()
 				.split(' ')
 				.map((el) => capitalizeFirstLetter(el))
-				.join('');
+				.join(' ');
 			const href = `/${pageName.replace('.pug', '.html')}`;
 			// const hrefForDeploy = `/${pageName.replace('.pug', '.html')}`;
 
