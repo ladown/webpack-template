@@ -37,7 +37,7 @@ const generateTemplaet = () => {
 	return `doctype html
   \nhtml(lang="ru")
     head
-      title Список всех старниц ${projectName}
+      title Список всех старниц «${projectName}»
       meta(name="format-detection" content="telephone=no")
       meta(http-equiv="X-UA-Compatible" content="IE=edge")
       meta(charset="UTF-8")
