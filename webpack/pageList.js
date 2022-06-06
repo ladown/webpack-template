@@ -1,15 +1,30 @@
+const { capitalizeFirstLetter } = require('./utils');
 const pugFiles = require('./pugPages')();
 
-let folder = __dirname.replace('webpack', '').trim().split('/');
-let projectName = folder[folder.length - 2].replace('-', ' ').replace('_', ' ').toLowerCase();
-let formatedProjectName = `${projectName[0].toUpperCase() + projectName.slice(1)}`;
+const folderPath = __dirname.replace('webpack', '').trim().split('/');
+const projectName = folderPath[folderPath.length - 2]
+	.replace(/-|_/gm, '')
+	.toLowerCase()
+	.trim()
+	.split(' ')
+	.map((el) => capitalizeFirstLetter(el))
+	.join('');
 
 const generatingPageList = () => {
 	let list = '<ol>';
 	pugFiles.forEach((pageName) => {
 		if (!pageName.includes('index')) {
-			let name = `${pageName.replace('.pug', '')[0].toUpperCase() + pageName.replace('.pug', '').slice(1)} page`;
-			list += `<li><a href="/${pageName.replace('.pug', '.html')}" target="_blank"> ${name}</a></li>`;
+			const name = pageName
+				.replace(/(-|_|.pug|page)/gm, '')
+				.toLowerCase()
+				.trim()
+				.split(' ')
+				.map((el) => capitalizeFirstLetter(el))
+				.join('');
+			const href = `/${pageName.replace('.pug', '.html')}`;
+			// const hrefForDeploy = `/${pageName.replace('.pug', '.html')}`;
+
+			list += `<li><a href=${href} target="_blank">${name} Page</a></li>`;
 		}
 	});
 
@@ -22,7 +37,7 @@ const generateTemplaet = () => {
 	return `doctype html
   \nhtml(lang="ru")
     head
-      title Список всех старниц
+      title Список всех старниц ${projectName}
       meta(name="format-detection" content="telephone=no")
       meta(http-equiv="X-UA-Compatible" content="IE=edge")
       meta(charset="UTF-8")
@@ -184,7 +199,7 @@ const generateTemplaet = () => {
           .head-top
             h3.head-title
               | Страницы проекта 
-              span «${formatedProjectName}»:
+              span «${projectName}»:
             a.git-link(href="https://github.com/ladown?tab=repositories" target="_blank") ladown
           ${generatingPageList()}`;
 };
