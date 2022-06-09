@@ -14,7 +14,6 @@ module.exports = {
 	target: 'web',
 
 	entry: {
-		common: `${paths.src.scripts}/common.js`,
 		main: ['@babel/polyfill', `${paths.src.scripts}/index.js`],
 	},
 
@@ -47,7 +46,7 @@ module.exports = {
 				filename: path.join(paths.build.default, file.replace('.pug', '.html')),
 				inject: 'body',
 				alwaysWriteToDisk: true,
-				chunks: ['vendor', 'main', 'common'],
+				chunks: ['vendor', 'main'],
 				chunksSortMode: 'manual',
 			});
 		}),
@@ -60,16 +59,20 @@ module.exports = {
 			inject: true,
 			favicons: {
 				lang: 'en-US',
-				background: '#fff',
-				theme_color: '#fff',
+				appName: 'my-app',
+				appDescription: 'My awesome App',
+				background: '#ddd',
+				theme_color: '#333',
 				appleStatusBarStyle: 'black-translucent', // Style for Apple status bar: "black-translucent", "default", "black". `string`
 				icons: {
 					android: true,
 					appleIcon: true,
 					appleStartup: false,
 					favicons: true,
-					windows: true,
+					windows: false,
 					yandex: false,
+					firefox: false,
+					coast: false,
 				},
 			},
 		}),
@@ -79,7 +82,17 @@ module.exports = {
 		rules: [
 			{
 				test: /\.pug$/,
-				loader: '@webdiscus/pug-loader',
+				use: [
+					{
+						loader: 'html-loader',
+					},
+					{
+						loader: '@webdiscus/pug-loader',
+						options: {
+							method: 'html',
+						},
+					},
+				],
 			},
 
 			{
