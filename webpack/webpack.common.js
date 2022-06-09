@@ -82,17 +82,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.pug$/,
-				use: [
-					{
-						loader: 'html-loader',
-					},
-					{
-						loader: '@webdiscus/pug-loader',
-						options: {
-							method: 'html',
-						},
-					},
-				],
+				loader: '@webdiscus/pug-loader',
 			},
 
 			{
