@@ -1,22 +1,14 @@
 :root {
 	--wrapper-offset: 100rem;
-	--wrapper-size: 1240px;
+	--wrapper-size: 1920rem;
 
-	@include to(992px) {
+	@include to(1120px) {
 		--wrapper-offset: 40px;
 	}
 
-	@include to(576px) {
+	@include to(580px) {
 		--wrapper-offset: 20px;
 	}
-}
-
-.wrap {
-	padding: 0 var(--wrapper-offset);
-	width: 100%;
-	max-width: var(--wrapper-size);
-	margin: auto;
-	position: relative;
 }
 
 html {
@@ -26,20 +18,24 @@ html {
 		font-size: 1px;
 	}
 
-	@include to(1120px) {
-		font-size: #{div(100, div(1120, 0.7))}vw;
+	@include to(1440px) {
+		font-size: #{div(100, div(1440, 0.9))}vw;
 	}
 
-	@include to(992px) {
+	@include to(1120px) {
+		font-size: #{div(100, div(1120, 0.8))}vw;
+	}
+
+	@include to(980px) {
 		font-size: 0.7px;
 	}
 
-	@include to(576px) {
+	@include to(580px) {
 		font-size: 1px;
 	}
 
 	@include to(440px) {
-		font-size: #{div(100, div(375, 1))}vw;
+		font-size: #{div(100, div(440, 1))}vw;
 	}
 
 	&.js-lock {
@@ -58,10 +54,23 @@ body {
 		font-size: 19rem;
 	}
 
-	@include to(576px) {
+	@include to(580px) {
 		font-size: 14rem;
-		line-height: 110%;
+		line-height: 1.1;
 	}
+}
+
+img,
+svg {
+	vertical-align: top;
+	max-width: 100%;
+}
+
+.wrap {
+	padding: 0 var(--wrapper-offset);
+	margin: 0 auto;
+	width: 100%;
+	max-width: var(--wrapper-size);
 }
 
 .icon {
@@ -70,14 +79,13 @@ body {
 
 .flex {
 	display: flex;
-	flex-wrap: wrap;
-
-	&_center {
-		justify-content: center;
-	}
 
 	&_inline {
 		display: inline-flex;
+	}
+
+	&_center {
+		justify-content: center;
 	}
 
 	&_justify {
@@ -103,24 +111,42 @@ body {
 	&_vertical {
 		align-items: center;
 	}
+
+	&_row {
+		flex-direction: row;
+	}
+
+	&_column {
+		flex-direction: column;
+	}
+
+	&_wrap {
+		flex-wrap: wrap;
+	}
+
+	&_nowrap {
+		flex-wrap: nowrap;
+	}
 }
 
-.css-text-left {
+.text-left {
 	text-align: left;
 }
 
-.css-text-center {
+.text-center {
 	text-align: center;
 }
 
-.css-text-right {
+.text-right {
 	text-align: right;
 }
 
-img,
-svg {
-	vertical-align: top;
-	max-width: 100%;
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-underline {
+	text-decoration: underline;
 }
 
 .object-fit {
@@ -133,13 +159,13 @@ svg {
 }
 
 .mobile-hidden {
-	@include to(576px) {
+	@include to(580px) {
 		display: none !important;
 	}
 }
 
 .tablet-hidden {
-	@include to(992px) {
+	@include to(980px) {
 		display: none !important;
 	}
 }
