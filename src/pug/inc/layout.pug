@@ -1,15 +1,78 @@
-doctype html
-
 include settings.pug
 include ../mixins/mixins-loader.pug
-block vars
 
-html(
-	lang='ru'
-	dir='ltr')
-	include head.pug
-	body(class=`${bodyClass}`)
-		+header
+block vars
+	-
+		var title = title || '';
+		var description = description || '';
+		var image = image || '';
+	-
+		var html = {
+			attrs: {
+				lang: 'ru',
+				dir: 'ltr'
+			},
+			classList: [],
+		};
+	-
+		var body = {
+			attrs: {},
+			classList: [bodyClass],
+		};
+	-
+		var meta = {
+			charset: 'utf-8',
+			description: description,
+			keywords: [],
+			ogTitle: title,
+			viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
+			XUACompatible: 'IE=edge',
+			detection: 'telephone=no'
+		};
+
+doctype html
+html(class=html.classList)&attributes(html.attrs)
+	head
+		block head-start
+
+		block meta
+			title #{ title }
+
+			if meta.charset
+				meta(charset=meta.charset)
+
+			if meta.XUACompatible
+				meta(
+					http-equiv='X-UA-Compatible'
+					content=meta.XUACompatible)
+
+			if meta.viewport
+				meta(
+					name='viewport'
+					content=meta.viewport)
+
+			if meta.description
+				meta(
+					name='description'
+					content=meta.description)
+
+			if meta.detection
+				meta(
+					name='format-detection'
+					content=meta.detection)
+
+		block head-end
+
+	body(class=body.classList)&attributes(body.attrs)
+		block body-start
+
+		block header
+			include header
+
 		+b.MAIN.main-content
 			block content
-		+footer
+
+		block footer
+			include footer
+
+		block body-end
