@@ -1,5 +1,5 @@
 'use strict';
 
-import '../scss/style.scss';
+import '../scss/app.scss';
 
 window.addEventListener('DOMContentLoaded', () => {});

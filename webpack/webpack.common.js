@@ -14,7 +14,7 @@ module.exports = {
 	target: 'web',
 
 	entry: {
-		main: ['@babel/polyfill', `${paths.src.scripts}/index.js`],
+		main: ['@babel/polyfill', `${paths.src.scripts}/app.js`],
 	},
 
 	output: {
