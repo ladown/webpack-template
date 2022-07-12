@@ -1,4 +1,3 @@
-include settings.pug
 include ../mixins/mixins-loader.pug
 
 block vars
@@ -6,6 +5,9 @@ block vars
 		var title = title || '';
 		var description = description || '';
 		var image = image || '';
+		var imgPath = './img/';
+		var spriteIcon = './icons/sprite.svg#';
+
 	-
 		var html = {
 			attrs: {

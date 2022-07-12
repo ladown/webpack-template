@@ -1,8 +1,8 @@
 const { capitalizeFirstLetter } = require('./utils');
 const pugFiles = require('./pugPages')();
+const packgeJson = require('../package.json');
 
-const folderPath = __dirname.replace('webpack', '').trim().split('/');
-const projectName = folderPath[folderPath.length - 2]
+const projectName = packgeJson.name
 	.replace(/-|_/gm, ' ')
 	.toLowerCase()
 	.trim()

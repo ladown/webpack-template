@@ -9,17 +9,17 @@
 	@if ($margin == 0) {
 		width: (div(100, $count) * 1%);
 	} @else {
-		width: calc(#{div(100, $count)}% - #{$margin * 2}px);
+		width: calc(#{div(100, $count)}% - #{$margin * 2}rem);
 	}
 
 	@if ($addmargin == true) {
-		margin: #{$margin}px;
+		margin: #{$margin}rem;
 	}
 }
 
 @mixin list-self($margin: 0) {
-	margin-left: -#{$margin}px;
-	margin-right: -#{$margin}px;
+	margin-left: -#{$margin}rem;
+	margin-right: -#{$margin}rem;
 }
 
 @mixin items($count, $margin: 0, $addmargin: true) {

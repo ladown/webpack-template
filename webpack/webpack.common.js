@@ -37,6 +37,10 @@ module.exports = {
 						ignore: ['backgrounds/*.*', 'favicons/*.*'],
 					},
 				},
+				{
+					from: paths.src.static,
+					to: paths.build.static,
+				},
 			],
 		}),
 

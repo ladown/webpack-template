@@ -10,6 +10,7 @@ module.exports = {
 		icons: path.resolve(__dirname, '../src/icons/'),
 		imgs: path.resolve(__dirname, '../src/img/'),
 		favicon: path.resolve(__dirname, '../src/img/favicons/'),
+		static: path.resolve(__dirname, '../src/static/'),
 	},
 	build: {
 		default: path.resolve(__dirname, '../build/'),
@@ -17,5 +18,6 @@ module.exports = {
 		vendors: path.resolve(__dirname, '../build/vendors/'),
 		imgs: path.resolve(__dirname, '../build/img/'),
 		favicon: path.resolve(__dirname, '../build/img/favicons/'),
+		static: path.resolve(__dirname, '../build/'),
 	},
 };
