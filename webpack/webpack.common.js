@@ -113,6 +113,7 @@ module.exports = {
 							sourceMap: true,
 						},
 					},
+					'glob-import-loader',
 				],
 			},
 

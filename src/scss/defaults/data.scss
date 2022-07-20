@@ -78,7 +78,7 @@
 }
 
 // максимум сторок текста
-@mixin max-rows($line-height, $rows, $only-height: false, $max-height: false) {
+@mixin max-rows($rows, $line-height, $max-height: false, $only-height: false) {
 	line-height: #{$line-height}rem;
 
 	@if ($max-height == false) {

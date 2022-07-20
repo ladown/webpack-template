@@ -19,7 +19,7 @@ module.exports = merge(commonOptions, {
 		rules: [
 			{
 				test: /\.(c|sa|sc)ss$/i,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader', 'glob-import-loader'],
 			},
 		],
 	},

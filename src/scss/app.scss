@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-@import './library/index';
-@import './defaults/index';
-@import './templates/index';
-@import './layouts/index';
+@import './library/**/*.scss';
+@import './defaults/index.scss';
+@import './templates/**/*.scss';
+@import './layouts/**/*.scss';
