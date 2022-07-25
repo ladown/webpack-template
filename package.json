@@ -26,7 +26,8 @@
 	},
 	"scripts": {
 		"start": "webpack serve -c webpack/webpack.dev.js",
-		"build": "webpack -c webpack/webpack.prod.js"
+		"build": "webpack -c webpack/webpack.prod.js",
+		"zipbuild": "webpack -c webpack/webpack.prod.js && zip -r build.zip build"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.18.9",
